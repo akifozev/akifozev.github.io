@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fatma & Akif Evleniyor - Düğün Davetiyesi</title>
-    <!-- Google Fonts: Başlıklar için Playfair Display, metinler için Open Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome ikonları için CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* CSS Değişkenleri */
@@ -17,7 +15,6 @@
             --accent-green: #2ecc71; /* Harita/WhatsApp ikonu için yeşil */
             --shadow-light: rgba(0, 0, 0, 0.1);
             --shadow-medium: rgba(0, 0, 0, 0.2);
-
             /* Yeni İslami Tema Renkleri */
             --islamic-bg-dark: #2c3e50; /* Koyu lacivert/gri */
             --islamic-card-bg: #ffffff; /* Kartlar için saf beyaz veya hafif krem */
@@ -26,7 +23,6 @@
             --islamic-border-subtle: rgba(255, 255, 255, 0.1); /* Beyaz desen daha iyi görünmesi için */
             --islamic-pattern-color: rgba(255, 255, 255, 0.03); /* Çok hafif desen rengi */
         }
-
         /* Genel Ayarlar */
         body {
             font-family: 'Open Sans', sans-serif;
@@ -35,7 +31,7 @@
             /* Yeni İslami tema arka planı */
             background-color: var(--islamic-bg-dark); /* Koyu ana renk */
             background-image: repeating-linear-gradient(45deg, var(--islamic-pattern-color) 0px, var(--islamic-pattern-color) 1px, transparent 1px, transparent 10px),
-                              repeating-linear-gradient(-45deg, var(--islamic-pattern-color) 0px, var(--islamic-pattern-color) 1px, transparent 1px, transparent 10px);
+                                repeating-linear-gradient(-45deg, var(--islamic-pattern-color) 0px, var(--islamic-pattern-color) 1px, transparent 1px, transparent 10px);
             background-size: 20px 20px; /* Desen boyutu */
             background-blend-mode: overlay; /* Desen ile rengi karıştır */
             color: var(--islamic-text-dark); /* Koyu metin rengi */
@@ -47,7 +43,6 @@
             overflow-x: hidden;
             position: relative; /* Z-index yönetimi için */
         }
-
         /* Vav Harfi Arka Plan Efekti */
         body::before {
             content: '';
@@ -67,12 +62,10 @@
             transition: opacity 1s ease-in-out;
             animation: vavFadeIn 2s ease-out 1s forwards; /* Davetiye kartından sonra belirsin */
         }
-
         @keyframes vavFadeIn {
             from { opacity: 0; }
             to { opacity: 0.04; } /* Başlangıçtaki opaklık */
         }
-
         /* Davetiye Kartı */
         .invitation-card {
             background: var(--islamic-card-bg); /* Kart için beyaz/krem arka plan */
@@ -87,7 +80,6 @@
             border: 1px solid var(--islamic-border-subtle); /* Hafif çerçeve */
             overflow: hidden; /* Yeni desen için */
         }
-
         /* Kart üzerine hafif İslami desen efekti */
         .invitation-card::before {
             content: '';
@@ -102,16 +94,13 @@
             z-index: 1; /* İçerikten altta kalsın */
             pointer-events: none; /* Etkileşimi engelleme */
         }
-
         @keyframes cardGlowIn {
             to { opacity: 1; }
         }
-
         @keyframes fadeInScale {
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
         }
-
         .invitation-card h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5em;
@@ -122,7 +111,6 @@
             position: relative;
             z-index: 2; /* İçeriği üste taşı */
         }
-
         .invitation-card .names-divider {
             font-family: 'Playfair Display', serif;
             font-size: 1.8em;
@@ -133,7 +121,6 @@
             padding: 0 15px;
             z-index: 2; /* İçeriği üste taşı */
         }
-
         .invitation-card .names-divider::before,
         .invitation-card .names-divider::after {
             content: '';
@@ -144,18 +131,14 @@
             background-color: var(--islamic-text-dark);
             transition: width 0.3s ease, background-color 0.3s ease; /* Hover efekti için */
         }
-
         /* İsim ayırıcısı üzerine gelindiğinde altın rengi ve genişleme */
         .invitation-card .names-divider:hover::before,
         .invitation-card .names-divider:hover::after {
             width: 70px;
             background-color: var(--islamic-accent-gold);
         }
-
         .invitation-card .names-divider::before { left: -60px; }
         .invitation-card .names-divider::after { right: -60px; }
-
-
         .invitation-card p {
             font-size: 1.1em;
             margin-bottom: 20px;
@@ -163,7 +146,6 @@
             position: relative;
             z-index: 2; /* İçeriği üste taşı */
         }
-
         /* Bölüm Başlıkları */
         .section-title {
             font-family: 'Playfair Display', serif;
@@ -177,13 +159,11 @@
             transition: color 0.3s ease, transform 0.3s ease;
             z-index: 2; /* İçeriği üste taşı */
         }
-
         /* Bölüm başlıklarına hafif hover efekti */
         .section-title:hover {
             color: #d4af37; /* Daha canlı altın */
             transform: scale(1.02);
         }
-
         .section-title::after {
             content: '';
             position: absolute;
@@ -195,14 +175,11 @@
             background-color: var(--islamic-accent-gold);
             transition: width 0.3s ease, background-color 0.3s ease; /* Hover efekti için */
         }
-
         /* Bölüm başlığı alt çizgisini genişletme */
         .section-title:hover::after {
             width: 70px;
             background-color: #d4af37;
         }
-
-
         /* Etkinlik Detayları */
         .event-details {
             display: flex;
@@ -214,7 +191,6 @@
             position: relative;
             z-index: 2; /* İçeriği üste taşı */
         }
-
         .event-details div {
             display: flex;
             align-items: center;
@@ -223,23 +199,18 @@
             border-bottom: 1px dashed #eee;
             transition: background-color 0.2s ease; /* Hover efekti */
         }
-
         .event-details div:hover {
             background-color: #f8f8f8; /* Hafif arka plan değişimi */
             border-radius: 5px;
         }
-
-
         .event-details div:last-child {
             border-bottom: none;
         }
-
         .event-details i {
             margin-right: 15px;
             color: var(--islamic-accent-gold); /* Altın ikonlar */
             font-size: 1.3em;
         }
-
         /* Buton Grubu */
         .button-group {
             display: flex;
@@ -250,7 +221,6 @@
             position: relative;
             z-index: 2; /* İçeriği üste taşı */
         }
-
         /* Buton Stilleri */
         .action-button {
             display: inline-flex;
@@ -271,7 +241,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .action-button::before { /* Buton hover parıltı efekti */
             content: '';
             position: absolute;
@@ -285,48 +254,39 @@
             transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
             opacity: 0;
         }
-
         .action-button:hover::before {
             width: 200%;
             height: 200%;
             opacity: 1;
         }
-
-
         .action-button:hover {
             background-color: var(--islamic-accent-gold); /* Altın rengi hover */
             color: var(--primary-light); /* Metin rengi sabit kalır */
             box-shadow: 0 6px 15px var(--shadow-medium);
             transform: translateY(-3px);
         }
-
         .action-button i {
             margin-right: 10px;
             font-size: 1.1em;
         }
-
         /* WhatsApp Butonları için özel stil */
         .action-button.whatsapp {
             background-color: #25d366; /* WhatsApp yeşili */
             box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
         }
-
         .action-button.whatsapp:hover {
             background-color: #128c7e; /* Koyu WhatsApp yeşili */
             box-shadow: 0 6px 15px rgba(37, 211, 102, 0.6);
         }
-
         /* Harita Butonları için özel stil */
         .action-button.map {
             background-color: #4285F4; /* Google Maps mavisi */
             box-shadow: 0 4px 10px rgba(66, 133, 244, 0.4);
         }
-
         .action-button.map:hover {
             background-color: #3367D6; /* Koyu Google Maps mavisi */
             box-shadow: 0 6px 15px rgba(66, 133, 244, 0.6);
         }
-
         .footer-text {
             font-size: 0.9em;
             color: #777;
@@ -334,7 +294,6 @@
             position: relative;
             z-index: 2; /* İçeriği üste taşı */
         }
-
         /* Özel Mesaj Kutusu Stilleri (Tarayıcı alert() yerine) */
         .custom-message-box {
             position: fixed;
@@ -355,12 +314,10 @@
             border: 1px solid var(--islamic-accent-gold); /* Altın çerçeve */
             min-width: 280px;
         }
-
         .custom-message-box p {
             margin-bottom: 20px;
             font-size: 1.1em;
         }
-
         .custom-message-box button {
             background-color: var(--islamic-accent-gold); /* Altın renkli buton */
             color: var(--islamic-text-dark);
@@ -371,12 +328,10 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
             font-weight: 600;
         }
-
         .custom-message-box button:hover {
             background-color: #a07a3c; /* Daha koyu altın */
             transform: translateY(-2px);
         }
-
         /* Responsive Ayarlar */
         @media (max-width: 600px) {
             body {
@@ -423,14 +378,12 @@
         <h1>Sizi Düğünümüze Davet Ediyoruz!</h1>
         <div class="names-divider">Mehmet Ali & Mücella</div>
         <p>Hayatımızın en anlamlı gününü sizlerle paylaşmaktan mutluluk duyarız. Bu özel günümüzde sizleri aramızda görmekten onur duyarız.</p>
-
         <h2 class="section-title">Düğün Bilgileri</h2>
         <div class="event-details">
             <div><i class="fas fa-calendar-alt"></i> Tarih: 7 Eylül 2025 Pazar</div>
             <div><i class="fas fa-clock"></i> Kız Evine Hareket: 15:00</div>
             <div><i class="fas fa-utensils"></i> Yemek Saati: 16:00 – 18:00</div>
         </div>
-
         <h2 class="section-title">Konumlar</h2>
         <div class="button-group">
             <button class="action-button map" data-address="38.014315,32.531845">
@@ -443,7 +396,6 @@
                 <i class="fas fa-map-marker-alt"></i> Yemek Salonu Konumu
             </button>
         </div>
-
         <h2 class="section-title">İletişim</h2>
         <div class="button-group">
             <button class="action-button whatsapp" data-phone="905334206241">
@@ -453,101 +405,44 @@
                 <i class="fab fa-whatsapp"></i> Ahmet Erdoğan
             </button>
         </div>
-
         <p class="footer-text">Katılımınızdan onur duyarız.</p>
         <p class="footer-text">Saygılarımızla, Mehmet Ali & Mücella</p>
     </div>
-
-    <!-- Özel Mesaj Kutusu (Tarayıcı alert() yerine) -->
     <div id="customMessageBox" class="custom-message-box">
         <p id="messageBoxText"></p>
         <button onclick="document.getElementById('customMessageBox').style.display='none';">Tamam</button>
     </div>
-
     <script>
         // Mesaj kutusunu göstermek için yardımcı fonksiyon
         function showCustomMessage(message) {
             document.getElementById('messageBoxText').textContent = message;
             document.getElementById('customMessageBox').style.display = 'flex';
         }
-
-        // Cihaz işletim sistemini algılama fonksiyonları
-        function isAndroid() {
-            return /android/i.test(navigator.userAgent);
-        }
-
-        function isIOS() {
-            // Updated iOS detection for modern browsers and devices
-            const isIOSDevice = [
-                'iPad Simulator',
-                'iPhone Simulator',
-                'iPod Simulator',
-                'iPad',
-                'iPhone',
-                'iPod'
-            ].includes(navigator.platform) || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
-            return isIOSDevice && !window.MSStream;
-        }
-
         // Harita butonlarına tıklama olayı
         document.querySelectorAll('.action-button.map').forEach(button => {
             button.addEventListener('click', function() {
-                const address = this.dataset.address; // HTML'deki data-address'ten adresi al
-                let mapUrl = '';
-
-                // Eğer adres koordinat ise (virgül içeriyorsa)
-                const isCoordinates = address.includes(',');
-
-                if (isAndroid()) {
-                    if (isCoordinates) {
-                        mapUrl = `geo:${address}`; // Doğrudan koordinatları kullan
-                    } else {
-                        mapUrl = `https://maps.google.com/maps?q=${encodeURIComponent(address)}`;
-                    }
-                } else if (isIOS()) {
-                    if (isCoordinates) {
-                        mapUrl = `https://maps.apple.com/?q=${encodeURIComponent(address)}`; // Apple Maps koordinatları
-                    } else {
-                        mapUrl = `https://maps.apple.com/?address=${encodeURIComponent(address)}`;
-                    }
-                } else {
-                    // Masaüstü veya diğer cihazlar için her zaman Google Haritalar
-                    mapUrl = `https://maps.google.com/maps?q=${encodeURIComponent(address)}`;
-                }
-
-                if (mapUrl) {
-                    window.open(mapUrl, '_blank'); // Yeni sekmede haritayı aç
-                } else {
-                    showCustomMessage("Harita uygulaması için bir link oluşturulamadı.");
-                }
+                const address = this.dataset.address;
+                // Evrensel Google Haritalar URL'ini kullanarak navigasyon oluşturma
+                const mapUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+                window.open(mapUrl, '_blank');
             });
         });
-
         // WhatsApp butonlarına tıklama olayı
         document.querySelectorAll('.action-button.whatsapp').forEach(button => {
             button.addEventListener('click', function() {
-                const phoneNumber = this.dataset.phone; // HTML'deki data-phone'dan telefon numarasını al
-                // WhatsApp URL formatı: wa.me/telefonnumarası (ülke kodu dahil, boşluksuz)
+                const phoneNumber = this.dataset.phone;
                 const whatsappUrl = `https://wa.me/${phoneNumber}`;
-
-                if (whatsappUrl) {
-                    window.open(whatsappUrl, '_blank'); // Yeni sekmede WhatsApp'ı aç
-                } else {
-                    showCustomMessage("WhatsApp için bir link oluşturulamadı.");
-                }
+                window.open(whatsappUrl, '_blank');
             });
         });
-
         // Ekstra JavaScript animasyonları ve etkileşimler
         // Kartın içeriğinin dinamik olarak belirmesi için Intersection Observer
         const elementsToAnimate = document.querySelectorAll('h1, .names-divider, p, .section-title, .event-details div, .action-button, .footer-text');
-
         const observerOptions = {
             root: null, // Viewport'ı kök olarak kullan
             rootMargin: '0px',
             threshold: 0.1 // %10'u görünür olduğunda tetikle
         };
-
         const contentObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -560,16 +455,13 @@
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
                     }, Math.random() * 300); // Hafif rastgele gecikme
-
                     observer.unobserve(entry.target); // Bir kez animasyon oynadıktan sonra gözlemlemeyi bırak
                 }
             });
         }, observerOptions);
-
         elementsToAnimate.forEach(element => {
             contentObserver.observe(element);
         });
-
         // Sayfa yüklendiğinde davetiye kartının genel fade-in'i
         window.addEventListener('load', () => {
             const invitationCard = document.querySelector('.invitation-card');
